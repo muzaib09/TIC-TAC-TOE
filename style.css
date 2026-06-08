@@ -1,65 +1,65 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-body{
-   background: linear-gradient(to bottom, #0a192f, #001f54);
-    color: #fff;
+body {
+  background: linear-gradient(to bottom, #0a192f, #001f54);
+  color: #fff;
 }
-h1{
-    text-align: center;
-    padding-top: 30px;
-    font-size: 40px;
-    margin-bottom: 60px;
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.col {
+  background-color: #faf8f6;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  transition: 0.2s;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
 }
-
-.row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.col:hover {
+  background-color: #f0eeeb;
 }
-.box{
-    background-color: #FAF8F6;
-    color: black;
-    text-align: center;
-    align-items: center;
-    font-size: 90px;
-    transition: 0.2s;
-    border-radius: 20px;
-    height: 100px;
-    width: 100px;
-    margin: 5px;
+.col:active {
+  background-color: #e5e2de;
 }
-.box:hover{
-    background-color: #F0EEEB;
+button {
+  margin-top: 30px;
+  background-color: #ff0000;
+  color: #fff;
+  height: 30px;
+  width: 80px;
+  font-weight: bold;
+  border-radius: 9px;
+  border: none;
+  border-bottom: 1px solid black;
 }
-.box:active{
-    background-color: #E5E2DE;;
+button:hover {
+  background-color: #e60000;
 }
-button{
-    margin-top: 30px;
-    background-color: #ff0000;
-    color: #fff;
-    height: 30px;
-    width: 80px;
-    font-weight: bold;
-    border-radius: 9px;
-    border: none;
-    border-bottom: 1px solid black;
-}
-button:hover{
-    background-color: #E60000;;
-}
-button:active{
-    background-color: #CC0000;
+button:active {
+  background-color: #cc0000;
 }
