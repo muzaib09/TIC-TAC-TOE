@@ -28,7 +28,7 @@ h1 {
   justify-content: center;
 }
 .col {
-  background-color: #faf8f6;
+  background-color: #fff;
   color: black;
   display: flex;
   justify-content: center;
@@ -41,10 +41,10 @@ h1 {
   margin: 5px;
 }
 .col:hover {
-  background-color: #f0eeeb;
+  background-color: #d9d9d9;
 }
 .col:active {
-  background-color: #e5e2de;
+  background-color: #e6e6e6;
 }
 button {
   margin-top: 30px;
@@ -58,7 +58,9 @@ button {
   border-bottom: 1px solid black;
 }
 button:hover {
-  background-color: #e60000;
+  color: #ff0000;
+  background-color: #fff;
+  border: 1px solid red;
 }
 button:active {
   background-color: #cc0000;
