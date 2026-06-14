@@ -8,42 +8,58 @@ var box6 = document.getElementById("box6");
 var box7 = document.getElementById("box7");
 var box8 = document.getElementById("box8");
 var box9 = document.getElementById("box9");
+var sound = new Audio("music/winning_sound.mp3");
+var sound2 = new Audio("music/Fahhh.mp3");
 var text = "O";
-var count = 1;
+var count = 0;
+
+// main-game
+function game(value) {
+  turnChanger()
+  
+  if (value === "box1" && box1.innerHTML === "") {
+    box1.innerHTML = text;
+    count++;
+  } else if (value === "box2" && box2.innerHTML === "") {
+    box2.innerHTML = text;
+    count++;
+  } else if (value === "box3" && box3.innerHTML === "") {
+    box3.innerHTML = text;
+    count++;
+  } else if (value === "box4" && box4.innerHTML === "") {
+    box4.innerHTML = text;
+    count++;
+  } else if (value === "box5" && box5.innerHTML === "") {
+    box5.innerHTML = text;
+    count++;
+  } else if (value === "box6" && box6.innerHTML === "") {
+    box6.innerHTML = text;
+    count++;
+  } else if (value === "box7" && box7.innerHTML === "") {
+    box7.innerHTML = text;
+    count++;
+  } else if (value === "box8" && box8.innerHTML === "") {
+    box8.innerHTML = text;
+    count++;
+  } else if (value === "box9" && box9.innerHTML === "") {
+    box9.innerHTML = text;
+    count++;
+  }
+  winChecker()
+  drawFunction()
+  btnReset()
+}
 
 // functions
-function num(input) {
-  // turn-changer
-  console.log(count);
-  count++;
+function turnChanger() {
   if (count % 2 === 0) {
     text = "O";
   } else {
     text = "X";
   }
-
-  // clicktofunction
-  if (input === "box1" && box1.innerHTML === "") {
-    box1.innerHTML = text;
-  } else if (input === "box2" && box2.innerHTML === "") {
-    box2.innerHTML = text;
-  } else if (input === "box3" && box3.innerHTML === "") {
-    box3.innerHTML = text;
-  } else if (input === "box4" && box4.innerHTML === "") {
-    box4.innerHTML = text;
-  } else if (input === "box5" && box5.innerHTML === "") {
-    box5.innerHTML = text;
-  } else if (input === "box6" && box6.innerHTML === "") {
-    box6.innerHTML = text;
-  } else if (input === "box7" && box7.innerHTML === "") {
-    box7.innerHTML = text;
-  } else if (input === "box8" && box8.innerHTML === "") {
-    box8.innerHTML = text;
-  } else if (input === "box9" && box9.innerHTML === "") {
-    box9.innerHTML = text;
-  }
-
-  // winning-func-for-O
+}
+function winChecker() {
+  // for o
   if (
     (box1.innerHTML === "O" &&
       box2.innerHTML === "O" &&
@@ -68,10 +84,11 @@ function num(input) {
       box9.innerHTML === "O") ||
     (box3.innerHTML === "O" && box5.innerHTML === "O" && box7.innerHTML === "O")
   ) {
+    sound.play();
     alert("PLAYER O WINS");
     reset();
   }
-  // winning-func-for-X
+  // for x
   else if (
     (box1.innerHTML === "X" &&
       box2.innerHTML === "X" &&
@@ -96,18 +113,19 @@ function num(input) {
       box9.innerHTML === "X") ||
     (box3.innerHTML === "X" && box5.innerHTML === "X" && box7.innerHTML === "X")
   ) {
+    sound.play();
     alert("PLAYER X WINS");
     reset();
   }
-
-  // draw-fun
-  if (count === 11) {
+}
+function drawFunction() {
+  if (count === 9) {
+    sound2.play()
+    alert("NO ONE WINS!!!")
     reset();
   }
 }
-
-// resetBtn-func
-function btnclick(reset) {
+function btnReset(reset) {
   if (reset === "btn") {
     box1.innerHTML = "";
     box2.innerHTML = "";
@@ -118,11 +136,9 @@ function btnclick(reset) {
     box7.innerHTML = "";
     box8.innerHTML = "";
     box9.innerHTML = "";
-    count = 1;
+    count = 0;
   }
 }
-
-// gameReset-func
 function reset() {
   box1.innerHTML = "";
   box2.innerHTML = "";
@@ -133,5 +149,5 @@ function reset() {
   box7.innerHTML = "";
   box8.innerHTML = "";
   box9.innerHTML = "";
-  count = 1;
+  count = 0;
 }
